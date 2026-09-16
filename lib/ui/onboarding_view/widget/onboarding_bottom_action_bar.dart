@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:fit_flow/generated/l10n.dart';
 import 'package:fit_flow/utils/app_assets.dart';
 import 'package:fit_flow/utils/app_colors.dart';
 import 'package:fit_flow/utils/app_styles.dart';
@@ -11,6 +12,8 @@ class OnboardingBottomActionBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
+
     return ClipRect(
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
@@ -40,7 +43,7 @@ class OnboardingBottomActionBar extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Continue', style: AppStyles.whiteSemiBold17),
+                      Text(s.onboardingContinue, style: AppStyles.whiteSemiBold17),
                       const SizedBox(width: 8),
                       SizedBox(
                         width: 16,
@@ -57,7 +60,7 @@ class OnboardingBottomActionBar extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               Text(
-                'YOU CAN CHANGE THIS LATER IN PROFILE',
+                s.onboardingChangeLater,
                 style: AppStyles.mutedGraySemiBold10,
                 textAlign: TextAlign.center,
               ),

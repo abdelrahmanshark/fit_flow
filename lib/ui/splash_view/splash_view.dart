@@ -1,3 +1,4 @@
+import 'package:fit_flow/generated/l10n.dart';
 import 'package:fit_flow/utils/app_assets.dart';
 import 'package:fit_flow/utils/app_colors.dart';
 import 'package:fit_flow/utils/app_routes.dart';
@@ -25,6 +26,8 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light.copyWith(
         statusBarColor: Colors.transparent,
@@ -55,13 +58,13 @@ class _SplashViewState extends State<SplashView> {
                   ),
                   const SizedBox(height: 24),
                   Text(
-                    'FitFlow',
+                    s.appName,
                     style: AppStyles.whiteBold48,
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'ELEVATE YOUR MOVEMENT',
+                    s.splashTagline,
                     style: AppStyles.whiteLight14,
                     textAlign: TextAlign.center,
                   ),
@@ -90,7 +93,7 @@ class _SplashViewState extends State<SplashView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'POWERED BY',
+                        s.splashPoweredBy,
                         style: AppStyles.whiteMedium10,
                       ),
                       const SizedBox(width: 8),
@@ -101,7 +104,7 @@ class _SplashViewState extends State<SplashView> {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        'Google',
+                        s.splashGoogle,
                         style: AppStyles.whiteSemiBold12,
                       ),
                     ],

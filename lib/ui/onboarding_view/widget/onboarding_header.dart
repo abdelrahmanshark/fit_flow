@@ -1,11 +1,19 @@
-import 'package:fit_flow/utils/app_assets.dart';
+import 'package:fit_flow/data/models/onboarding_state.dart';
+import 'package:fit_flow/ui/onboarding_view/widget/onboarding_language_dropdown.dart';
 import 'package:fit_flow/utils/app_colors.dart';
 import 'package:fit_flow/utils/app_styles.dart';
+import 'package:fit_flow/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class OnboardingHeader extends StatelessWidget {
-  const OnboardingHeader({super.key});
+  const OnboardingHeader({
+    super.key,
+    required this.languageLabel,
+    required this.onLanguageSelected,
+  });
+
+  final String languageLabel;
+  final ValueChanged<OnboardingLanguage> onLanguageSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -21,21 +29,10 @@ class OnboardingHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('FitFlow', style: AppStyles.primaryBlueBold20),
-          SizedBox(
-            width: 40,
-            height: 40,
-            child: Center(
-              child: SizedBox(
-                width: 20,
-                height: 20,
-                child: SvgPicture.asset(
-                  AppAssets.onboardingIconHelp,
-                  width: 20,
-                  height: 20,
-                ),
-              ),
-            ),
+          Text(S.of(context).appName, style: AppStyles.primaryBlueBold20),
+          OnboardingLanguageDropdown(
+            label: languageLabel,
+            onSelected: onLanguageSelected,
           ),
         ],
       ),

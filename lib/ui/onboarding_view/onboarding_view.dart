@@ -1,3 +1,6 @@
+import 'package:fit_flow/cubit/change_language_cubit.dart';
+import 'package:fit_flow/data/models/onboarding_state.dart';
+import 'package:fit_flow/generated/l10n.dart';
 import 'package:fit_flow/ui/onboarding_view/view_model/onboarding_view_model.dart';
 import 'package:fit_flow/ui/onboarding_view/widget/onboarding_availability_selector.dart';
 import 'package:fit_flow/ui/onboarding_view/widget/onboarding_bottom_action_bar.dart';
@@ -8,6 +11,7 @@ import 'package:fit_flow/utils/app_colors.dart';
 import 'package:fit_flow/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -20,7 +24,24 @@ class _OnboardingViewState extends State<OnboardingView> {
   final OnboardingViewModel _viewModel = OnboardingViewModel();
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _viewModel.syncLanguageFromLocale(
+      context.read<ChangeLanguageCubit>().state,
+    );
+  }
+
+  Future<void> _onLanguageSelected(OnboardingLanguage language) async {
+    _viewModel.selectLanguage(language);
+    await context.read<ChangeLanguageCubit>().changeLanguage(
+          _viewModel.localeFor(language),
+        );
+    setState(() {});
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final goals = _viewModel.goals;
     final state = _viewModel.state;
 
@@ -43,12 +64,12 @@ class _OnboardingViewState extends State<OnboardingView> {
                       delegate: SliverChildListDelegate([
                         const SizedBox(height: 32),
                         Text(
-                          'Select Your Goal',
+                          s.onboardingSelectYourGoal,
                           style: AppStyles.nearBlackExtraBold34,
                         ),
                         const SizedBox(height: 7.3),
                         Text(
-                          'Customize your journey for precision performance.',
+                          s.onboardingCustomizeJourney,
                           style: AppStyles.grayBlueRegular15,
                         ),
                         const SizedBox(height: 32),
@@ -59,8 +80,8 @@ class _OnboardingViewState extends State<OnboardingView> {
                               bottom: index == goals.length - 1 ? 0 : 12,
                             ),
                             child: OnboardingGoalCard(
-                              title: goal.title,
-                              subtitle: goal.subtitle,
+                              title: goal.title(s),
+                              subtitle: goal.subtitle(s),
                               iconPath: goal.iconPath,
                               iconWidth: goal.iconWidth,
                               iconHeight: goal.iconHeight,
@@ -73,13 +94,13 @@ class _OnboardingViewState extends State<OnboardingView> {
                         }),
                         const SizedBox(height: 40),
                         Text(
-                          'Weekly Availability',
+                          s.onboardingWeeklyAvailability,
                           style: AppStyles.nearBlackBold18,
                         ),
                         const SizedBox(height: 16),
                         OnboardingAvailabilitySelector(
                           selectedIndex: state.selectedDaysIndex,
-                          labels: _viewModel.availabilityDays,
+                          labels: _viewModel.availabilityDays(s),
                           onSelected: (index) => setState(
                             () => _viewModel.selectDays(index),
                           ),
@@ -91,11 +112,14 @@ class _OnboardingViewState extends State<OnboardingView> {
                   ),
                 ],
               ),
-              const Positioned(
+              Positioned(
                 top: 0,
                 left: 0,
                 right: 0,
-                child: OnboardingHeader(),
+                child: OnboardingHeader(
+                  languageLabel: _viewModel.languageLabel(s),
+                  onLanguageSelected: _onLanguageSelected,
+                ),
               ),
               const Positioned(
                 left: 0,

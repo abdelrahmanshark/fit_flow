@@ -1,3 +1,4 @@
+import 'package:fit_flow/generated/l10n.dart';
 import 'package:fit_flow/utils/app_assets.dart';
 import 'package:fit_flow/utils/app_colors.dart';
 import 'package:fit_flow/utils/app_styles.dart';
@@ -8,6 +9,8 @@ class OnboardingRecommendedCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
+
     return Container(
       height: 150,
       decoration: BoxDecoration(
@@ -47,11 +50,11 @@ class OnboardingRecommendedCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'RECOMMENDED',
+                  s.onboardingRecommended,
                   style: AppStyles.primaryBlueSemiBold10,
                 ),
                 Text(
-                  'Optimal recovery cycle',
+                  s.onboardingOptimalRecovery,
                   style: AppStyles.slateGrayMedium11,
                 ),
               ],

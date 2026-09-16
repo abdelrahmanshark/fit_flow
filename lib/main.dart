@@ -1,7 +1,8 @@
+import 'package:fit_flow/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(FitFlow());
+void main() {
+  runApp(const FitFlow());
 }
 
 class FitFlow extends StatelessWidget {
@@ -9,8 +10,10 @@ class FitFlow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.splash,
+      routes: AppRoutes.routes,
     );
   }
 }

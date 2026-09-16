@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+
+class AppColors {
+  static const Color primaryBlueColor = Color(0xFF2563EB);
+  static const Color primaryBlueDeepColor = Color(0xFF2463EB);
+  static const Color primaryBlueDarkColor = Color(0xFF004AC6);
+  static const Color lightBlueColor = Color(0xFFDBE1FF);
+  static const Color softBlueColor = Color(0xFFEFF6FF);
+  static const Color softIndigoColor = Color(0xFFEEF2FF);
+  static const Color greenColor = Color(0xFF22C55E);
+  static const Color mintGreenColor = Color(0xFF6CF8BB);
+  static const Color mintBlurColor = Color(0xFF6FFBBE);
+  static const Color softGreenColor = Color(0xFFECFDF5);
+  static const Color orangeColor = Color(0xFFF97316);
+  static const Color softOrangeColor = Color(0xFFFFF7ED);
+  static const Color amberColor = Color(0xFFFBBF24);
+  static const Color brownOrangeColor = Color(0xFF943700);
+  static const Color peachColor = Color(0xFFFFDBCD);
+  static const Color redColor = Color(0xFFBA1A1A);
+  static const Color softRedColor = Color(0xFFFFDAD6);
+  static const Color nearBlackColor = Color(0xFF1A1C1C);
+  static const Color slate900Color = Color(0xFF0F172A);
+  static const Color slate800Color = Color(0xFF1E293B);
+  static const Color slate700Color = Color(0xFF334155);
+  static const Color grayBlueColor = Color(0xFF434655);
+  static const Color coolGrayColor = Color(0xFF737686);
+  static const Color slateGrayColor = Color(0xFF64748B);
+  static const Color mutedGrayColor = Color(0xFF94A3B8);
+  static const Color lavenderGrayColor = Color(0xFFC3C6D7);
+  static const Color slate300Color = Color(0xFFCBD5E1);
+  static const Color slate200Color = Color(0xFFE2E8F0);
+  static const Color lightGrayColor = Color(0xFFE2E2E2);
+  static const Color paleSlateColor = Color(0xFFF1F5F9);
+  static const Color iosGrayColor = Color(0xFFF2F2F7);
+  static const Color gray100Color = Color(0xFFF3F4F6);
+  static const Color inputGrayColor = Color(0xFFF3F3F3);
+  static const Color softGrayColor = Color(0xFFEEEEEE);
+  static const Color offWhiteColor = Color(0xFFF9F9F9);
+  static const Color softWhiteColor = Color(0xFFFBFBFB);
+  static const Color mistGrayColor = Color(0xFFF6F6F8);
+  static const Color iceGrayColor = Color(0xFFF8FAFC);
+  static const Color whiteColor = Color(0xFFFFFFFF);
+}

@@ -1,0 +1,25 @@
+{
+  "goals": [
+    {
+      "id": "get_strong",
+      "title": {
+        "en": "Get Strong",
+        "ar": "كن أقوى"
+      }
+    },
+    {
+      "id": "build_muscle",
+      "title": {
+        "en": "Build Muscle",
+        "ar": "بناء العضلات"
+      }
+    },
+    {
+      "id": "general_fitness",
+      "title": {
+        "en": "General Fitness",
+        "ar": "لياقة عامة"
+      }
+    }
+  ]
+}

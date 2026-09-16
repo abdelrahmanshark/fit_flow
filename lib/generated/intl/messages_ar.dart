@@ -64,7 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "اختر هدفك",
     ),
     "onboardingWeeklyAvailability": MessageLookupByLibrary.simpleMessage(
-      "التوفر الأسبوعي",
+      "عدد الأيام في الاسبوع",
     ),
     "splashGoogle": MessageLookupByLibrary.simpleMessage("Google"),
     "splashPoweredBy": MessageLookupByLibrary.simpleMessage("مدعوم من"),

@@ -1,0 +1,286 @@
+{
+    "exercises": [
+      {
+        "id": "ex_sqt",
+        "title": {
+          "en": "Barbell Back Squat",
+          "ar": "باربيل باك سكوات"
+        },
+        "image_url": "https://example.com/images/barbell_back_squat.jpg",
+        "equipment": [
+          "barbell",
+          "squat_rack"
+        ],
+        "muscle_groups": [
+          "quads",
+          "glutes",
+          "hamstrings",
+          "core"
+        ],
+        "form_cues": {
+          "en": [
+            "Keep chest up",
+            "Drive through mid-foot",
+            "Break at hips and knees"
+          ],
+          "ar": [
+            "حافظ على استقامة صدرك",
+            "ادفع بمنتصف قدمك",
+            "اثنِ الوركين والركبتين معًا"
+          ]
+        }
+      },
+      {
+        "id": "ex_bp",
+        "title": {
+          "en": "Barbell Bench Press",
+          "ar": "باربيل بنش برس"
+        },
+        "image_url": "https://example.com/images/barbell_bench_press.jpg",
+        "equipment": [
+          "barbell",
+          "bench"
+        ],
+        "muscle_groups": [
+          "chest",
+          "triceps",
+          "shoulders"
+        ],
+        "form_cues": {
+          "en": [
+            "Keep your feet firmly on the floor",
+            "Lower the bar to your mid-chest",
+            "Press the bar upward with control"
+          ],
+          "ar": [
+            "ثبت قدميك جيدًا على الأرض",
+            "أنزل البار إلى منتصف صدرك",
+            "ادفع البار لأعلى بتحكم"
+          ]
+        }
+      },
+      {
+        "id": "ex_dl",
+        "title": {
+          "en": "Barbell Deadlift",
+          "ar": "باربيل ديدليفت"
+        },
+        "image_url": "https://example.com/images/barbell_deadlift.jpg",
+        "equipment": [
+          "barbell"
+        ],
+        "muscle_groups": [
+          "hamstrings",
+          "glutes",
+          "lower_back",
+          "core"
+        ],
+        "form_cues": {
+          "en": [
+            "Keep your back neutral",
+            "Keep the bar close to your legs",
+            "Drive through your feet"
+          ],
+          "ar": [
+            "حافظ على استقامة ظهرك",
+            "أبقِ البار قريبًا من ساقيك",
+            "ادفع من خلال قدميك"
+          ]
+        }
+      },
+      {
+        "id": "ex_ohp",
+        "title": {
+          "en": "Overhead Press",
+          "ar": "أوفرهيد برس"
+        },
+        "image_url": "https://example.com/images/overhead_press.jpg",
+        "equipment": [
+          "barbell"
+        ],
+        "muscle_groups": [
+          "shoulders",
+          "triceps",
+          "core"
+        ],
+        "form_cues": {
+          "en": [
+            "Keep your core tight",
+            "Press the bar overhead",
+            "Avoid leaning backward"
+          ],
+          "ar": [
+            "حافظ على شد عضلات البطن",
+            "ادفع البار فوق رأسك",
+            "تجنب الميل للخلف"
+          ]
+        }
+      },
+      {
+        "id": "ex_pullup",
+        "title": {
+          "en": "Pull Up",
+          "ar": "تمرين العقلة"
+        },
+        "image_url": "https://example.com/images/pull_up.jpg",
+        "equipment": [
+          "pull_up_bar"
+        ],
+        "muscle_groups": [
+          "lats",
+          "biceps",
+          "upper_back",
+          "core"
+        ],
+        "form_cues": {
+          "en": [
+            "Grip the bar firmly",
+            "Pull your chest toward the bar",
+            "Control the movement on the way down"
+          ],
+          "ar": [
+            "أمسك البار بقوة",
+            "اسحب صدرك باتجاه البار",
+            "تحكم في الحركة أثناء النزول"
+          ]
+        }
+      },
+      {
+        "id": "ex_row",
+        "title": {
+          "en": "Barbell Row",
+          "ar": "باربيل رو"
+        },
+        "image_url": "https://example.com/images/barbell_row.jpg",
+        "equipment": [
+          "barbell"
+        ],
+        "muscle_groups": [
+          "upper_back",
+          "lats",
+          "biceps",
+          "rear_delts"
+        ],
+        "form_cues": {
+          "en": [
+            "Keep your back flat",
+            "Pull the bar toward your lower ribs",
+            "Squeeze your shoulder blades"
+          ],
+          "ar": [
+            "حافظ على استقامة ظهرك",
+            "اسحب البار باتجاه أسفل القفص الصدري",
+            "اضغط لوحي الكتف معًا"
+          ]
+        }
+      },
+      {
+        "id": "ex_lunge",
+        "title": {
+          "en": "Dumbbell Lunges",
+          "ar": "دامبل لونجز"
+        },
+        "image_url": "https://example.com/images/dumbbell_lunges.jpg",
+        "equipment": [
+          "dumbbells"
+        ],
+        "muscle_groups": [
+          "quads",
+          "glutes",
+          "hamstrings",
+          "calves"
+        ],
+        "form_cues": {
+          "en": [
+            "Keep your torso upright",
+            "Step forward with control",
+            "Push through your front foot"
+          ],
+          "ar": [
+            "حافظ على استقامة الجزء العلوي من جسمك",
+            "خذ خطوة للأمام بتحكم",
+            "ادفع من خلال قدمك الأمامية"
+          ]
+        }
+      },
+      {
+        "id": "ex_curl",
+        "title": {
+          "en": "Dumbbell Bicep Curl",
+          "ar": "دامبل بايسبس كيرل"
+        },
+        "image_url": "https://example.com/images/dumbbell_bicep_curl.jpg",
+        "equipment": [
+          "dumbbells"
+        ],
+        "muscle_groups": [
+          "biceps",
+          "forearms"
+        ],
+        "form_cues": {
+          "en": [
+            "Keep your elbows close to your body",
+            "Curl the dumbbells upward",
+            "Lower the weights slowly"
+          ],
+          "ar": [
+            "حافظ على إبقاء مرفقيك بجانب جسمك",
+            "ارفع الدمبلز لأعلى",
+            "أنزل الأوزان ببطء"
+          ]
+        }
+      },
+      {
+        "id": "ex_triceps",
+        "title": {
+          "en": "Tricep Pushdown",
+          "ar": "ترايسبس بوش داون"
+        },
+        "image_url": "https://example.com/images/tricep_pushdown.jpg",
+        "equipment": [
+          "cable_machine"
+        ],
+        "muscle_groups": [
+          "triceps"
+        ],
+        "form_cues": {
+          "en": [
+            "Keep your elbows close to your body",
+            "Push the handle downward",
+            "Squeeze your triceps at the bottom"
+          ],
+          "ar": [
+            "حافظ على إبقاء مرفقيك بجانب جسمك",
+            "ادفع المقبض لأسفل",
+            "اضغط عضلات الترايسبس في الأسفل"
+          ]
+        }
+      },
+      {
+        "id": "ex_plank",
+        "title": {
+          "en": "Plank",
+          "ar": "بلانك"
+        },
+        "image_url": "https://example.com/images/plank.jpg",
+        "equipment": [],
+        "muscle_groups": [
+          "core",
+          "abs",
+          "shoulders"
+        ],
+        "form_cues": {
+          "en": [
+            "Keep your body in a straight line",
+            "Engage your core",
+            "Keep your hips from dropping"
+          ],
+          "ar": [
+            "حافظ على جسمك في خط مستقيم",
+            "شد عضلات البطن",
+            "لا تجعل وركيك يهبطان للأسفل"
+          ]
+        }
+      }
+    ]
+  }

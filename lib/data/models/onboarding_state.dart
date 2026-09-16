@@ -2,7 +2,7 @@ enum OnboardingLanguage { english, arabic }
 
 class OnboardingState {
   const OnboardingState({
-    this.selectedGoalIndex = 1,
+    this.selectedGoalIndex = 0,
     this.selectedDaysIndex = 1,
     this.selectedLanguage = OnboardingLanguage.arabic,
   });

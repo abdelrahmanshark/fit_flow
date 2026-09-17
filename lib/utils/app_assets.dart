@@ -15,4 +15,6 @@ class AppAssets {
   static const String onboardingIconArrow =
       'assets/images/onboarding_icon_arrow.svg';
   static const String goalsJson = 'assets/json/goals.json';
+  static const String plansJson = 'assets/json/plans.json';
+  static const String exercisesJson = 'assets/json/exercises.json';
 }

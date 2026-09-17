@@ -1,4 +1,5 @@
 import 'package:fit_flow/cubit/change_language_cubit.dart';
+import 'package:fit_flow/cubit/get_complete_workout_plan_cubit.dart';
 import 'package:fit_flow/cubit/get_onboarding_goals_cubit.dart';
 import 'package:fit_flow/data/models/onboarding_state.dart';
 import 'package:fit_flow/generated/l10n.dart';
@@ -49,16 +50,37 @@ class _OnboardingViewState extends State<OnboardingView> {
     setState(() {});
   }
 
+  void _onContinue() {
+    context.read<GetCompleteWorkoutPlanCubit>().getCompleteWorkoutPlan(
+          _viewModel.input,
+        );
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final locale = Localizations.localeOf(context);
 
-    return BlocListener<GetOnboardingGoalsCubit, GetOnboardingGoalsState>(
-      listener: (context, cubitState) {
-        _viewModel.handleGetOnboardingGoalsState(cubitState);
-        setState(() {});
-      },
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<GetOnboardingGoalsCubit, GetOnboardingGoalsState>(
+          listener: (context, cubitState) {
+            _viewModel.handleGetOnboardingGoalsState(cubitState);
+            setState(() {});
+          },
+        ),
+        BlocListener<GetCompleteWorkoutPlanCubit, GetCompleteWorkoutPlanState>(
+          listener: (context, cubitState) {
+            _viewModel.handleGetCompleteWorkoutPlanState(cubitState);
+            setState(() {});
+            if (cubitState is GetCompleteWorkoutPlanFailure) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(cubitState.message)),
+              );
+            }
+          },
+        ),
+      ],
       child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.dark.copyWith(
           statusBarColor: Colors.transparent,
@@ -116,10 +138,9 @@ class _OnboardingViewState extends State<OnboardingView> {
                                   iconWidth: goal.iconWidth,
                                   iconHeight: goal.iconHeight,
                                   isSelected:
-                                      _viewModel.state.selectedGoalIndex ==
-                                          index,
+                                      _viewModel.input.goalId == goal.id,
                                   onTap: () => setState(
-                                    () => _viewModel.selectGoal(index),
+                                    () => _viewModel.selectGoal(goal.id),
                                   ),
                                 ),
                               );
@@ -131,10 +152,10 @@ class _OnboardingViewState extends State<OnboardingView> {
                           ),
                           const SizedBox(height: 16),
                           OnboardingAvailabilitySelector(
-                            selectedIndex: _viewModel.state.selectedDaysIndex,
+                            selectedIndex: _viewModel.input.selectedDaysIndex,
                             labels: _viewModel.availabilityDays(s),
                             onSelected: (index) => setState(
-                              () => _viewModel.selectDays(index),
+                              () => _viewModel.selectDaysByIndex(index),
                             ),
                           ),
                           const SizedBox(height: 24),
@@ -153,11 +174,14 @@ class _OnboardingViewState extends State<OnboardingView> {
                     onLanguageSelected: _onLanguageSelected,
                   ),
                 ),
-                const Positioned(
+                Positioned(
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  child: OnboardingBottomActionBar(),
+                  child: OnboardingBottomActionBar(
+                    isLoading: _viewModel.isCreatingPlan,
+                    onContinue: _onContinue,
+                  ),
                 ),
               ],
             ),
